@@ -1,0 +1,61 @@
+CSCI3022-16Jan2019-Lec
+Populations and Samples
+
+Definitions:
+	A population is a collection of units
+	A sample is the subset of the population
+	A characteristic/variable of interest is something we want to measure for each unit
+Problem:
+	spose the city of boulder wants to estuimate its per-household income via a phone survey. They call every 50th number on a list of boulder phone numbers between 6pm and 8pm
+		*population: all of boulder residents
+		*sample: every 50th person on the phone list that picks up
+		*variable of interest: per household income
+
+Sample types:
+	* Simple random sample: randomly select people from sample frame
+	* Systematic sample: order the sample frame. Choose int k. Sample every kth unit in the sample frame
+	* Census sample: sample literally everyone/everythign in the population
+	* Stratified sample: if you have a heterogeneous population that can be broken up into homogeneous groups, randomly sample from each group proportionate to their prevalence in the population
+		Middle school: 6th, 7th, 8th grade
+		sample voi: height
+		population: 6th: 100; 7th: 60; 8th: 40
+		stratified samp: 10% of each subgroup -> 6th: 10; 7th: 6; 8th: 4
+
+* Data scientist hope to learn about some chacteristic/variable of a population but they usually cant see/study the whole population, so they take a sample and infer from the sample
+* so how do they make the jump from studying a simple to drawing meaningful conclusions? Inference
+Two types of data exploration:
+	* numerical
+	* graphical
+
+Summarizing the center, "central tendency" of the sample data is a popular and important characteristic of a set of numbers
+	3 measures:
+		* mean, also called arithmetic average x-
+			* advantages: fast to calculate
+			* disadvantages: outliers can make intepretation misleading
+		* median x~
+			* ordering the observations from lowest to highest, and then find the middle
+			* if n is odd: x~ = (n + 1)^th/2
+			* if n is even: x~ = (n)^th/2
+			* 36 15 39 41 40 42 47 49 7 6
+				- First thing to do is sort them:
+				- 6 7 15 36 39 40 41 42 47 49
+				- n=10
+				- median = avg of 5th and 6th datapoint
+				- x~=(30+40)/2 = 39.5
+				- latex: x~ = \tilde{x}
+		* mode x*:
+			* the sample mode is the value that occuers most often
+Mean vs Median
+	* The population mena and median will generally not be equal. If the population distributuion is positively or negative skewed			
+	* negative skew (left-skew): the hump is on the right
+	* symmetric: highs and lows are canceling eachother out
+	* positive skew (right-skew): the hump is on the left dragging the mean up
+
+Quartiles: divide the data into 4 equal parts:
+	* lower quartile (Q1 or P25): splits the lowest 25% of the data from the other 75%
+	* middle quartile (Q2 or P50): splits the data in half (the median)
+	* upper quartile (Q2 or P50): splits the highest 25% from the lowest 75%
+	example: 6 7 15 36 39 40 41 42 43 47 49
+		- n = 11 -> odd so x~ = Q2 = 40
+		- Q1 take the lower half of the data including x~ 6 7 15 36 39 40 = 25.5
+		- Q3 is goign to be the upper half of the data including x~ 40 41 42 43 47 49

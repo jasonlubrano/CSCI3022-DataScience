@@ -1,0 +1,63 @@
+CSCI3022-18Jan2019-Lec
+Announcements
+Quizlet 1 due wednesday @ 10 AM
+Homework 1 due Feb 1 by 5 am.
+	Turn in a pynb file -> jupyter notebook file
+
+Interquartile range
+	* the interquartile range is defined to be the difference between the upper and lower quartiles.
+		* Q3 - Q1
+	* IQR gives the spread of 50% of the data
+	* ex: Use the IQR of the data 6 7 15 36 39 40 41 42 43 47 49
+		x~ = Q2 = 40
+		Q1 = 25.5
+		Q3 = 42.5
+		IQR = Q3 - Q1 = 42.5 - 25.5 = 17
+
+John Tukey, father of modern EDA, advocated summarizing data with 5 values
+	* min value
+	* lower quartile
+	* median
+	* upper quartile
+	* max value
+	Ex: find the 5-number summary for 6 7 15 36 39 40 41 42 43 47 49
+		n = is odd, Q2 = 40
+		min = 6
+		max = 49
+		Q1 = (15 + 36) / 2 = 25.5
+		Q3 = (42 + 43) / 2 = 42.5
+	Advantages:
+		* gives the center of the data
+		* gives the spread of the data
+		* gives the skewness of the data
+			- if Q2 is closer to Q1 than Q3 then you know median is "leaning left" i.e right-skewed
+			- if Q2 is closer to Q3 than Q1, then median is "right leaning" i.e left-skewed
+
+Graphical summaries through different plots
+
+Histograms
+	* a histogram is a graphical representation of the distribution of numerical dat
+	* limp or "bin" the observed values of the VOI
+		* Bins typically consecutive, non-overlapping and equal in length
+	* Frequency histogram: count the number of data values that fall inot a bin and draw a rectangle over that bin with height equal to the count
+	* Density histogram: count the number of data values that fall into a bin and adjust the height such that the sum of theearea of all bins is equal to 1
+	* consider where the bins begin/end
+	Ex: Find the frequency hsitogram with bin width 5 of data on left with left-most bin edge 35
+		- sort it in bins, facecolor is the python boxes
+	* types of modes:
+		* Unimodal - one peak
+		* BiModal - two peaks. distribution of ages at a childs birthday party. kids are one mode adults are another.
+		* multimodal - more than two subpopualtions, more than two peak
+	* skewness
+		* leaning right its a negative skew
+		* leaning lelft its a positive skew
+		* none then its symmetrical
+
+Box-whisker plot
+	* Graphical representation of the 5 value summary
+	* the box extends from Q1 to Q3
+	* median line displays the meidan
+	* whiskers extend to the fartherst data point within 1.5x IQR of each quartile. At most this is the fartherst it goes but it always ends on a point.
+	* the fliers or outliers ar eany points outside of the whiskers
+	* the width of the box is unimportant
+	* can be horizontally or vertically oriented
